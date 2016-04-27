@@ -1,0 +1,72 @@
+.base_ui {
+  top: var(--statusbar-height);
+  left: 0;
+  width: 100%;
+  height: calc(100% - var(--statusbar-height));
+  position: absolute;
+}
+
+@keyframes outToLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes inFromRight {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+.base_ui[transition-state="closed"] {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.base_ui.in-from-left {
+  animation: inFromLeft var(--transition-duration) forwards
+             cubic-bezier(0.7, 0.0, 1.0, 1.0);
+}
+
+.base_ui.out-to-right {
+  animation: outToRight var(--transition-duration) forwards
+             cubic-bezier(0.7, 0.0, 1.0, 1.0);
+}
+
+.base_ui.in-from-right {
+  animation: inFromRight var(--transition-duration) forwards
+             cubic-bezier(0.7, 0.0, 1.0, 1.0);
+}
+
+.base_ui.out-to-left {
+  animation: outToLeft var(--transition-duration) forwards
+             cubic-bezier(0.7, 0.0, 1.0, 1.0);
+}
+
+.base_ui.slideleft {
+  animation: slideLeft var(--transition-duration) forwards
+             cubic-bezier(0.7, 0.0, 1.0, 1.0);
+}
+
+.base_ui.slideright {
+  animation: slideRight var(--transition-duration) forwards
+             cubic-bezier(0.7, 0.0, 1.0, 1.0);
+}
+
+.base_ui.slide-from-bottom {
+  animation: slideFromDown var(--transition-duration) forwards
+             cubic-bezier(0.7, 0.0, 1.0, 1.0);
+}
+
+.base_ui.slide-to-bottom {
+  animation: slideToDown var(--transition-duration) forwards
+             cubic-bezier(0.7, 0.0, 1.0, 1.0);
+}
+
+.base_ui.slide-from-top {
+  animation: slideFromUp var(--transition-duration) forwards
+             cubic-bezier(0.7, 0.0, 1.0, 1.0);
+}
+
+.base_ui.slide-to-top {
+  animation: slideToUp var(--transition-duration) forwards
+             cubic-bezier(0.7, 0.0, 1.0, 1.0);
+}
