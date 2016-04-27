@@ -5,9 +5,13 @@ TransitionController is a helper class to animate the desired UI component objec
 * Best practice: use baseClass to extend your React component.
 * It works for non-React component, too.
 
+## Design thinking ##
+* Assume there're 4 states for any simple animation: 'closed', 'opening', 'opened', 'closing'.
+* Using a state machine to transmit the transition state according to current conditions.
+
 ## Usage ##
 ### With React ###
-```
+```js
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TransitionController from 'dist/transition_controller';
